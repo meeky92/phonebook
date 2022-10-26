@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Telephone Directory{% endblock %}
+
+{% block content %}
+
+<form class="bg-white p-5 rounded mt-3" action="" method="POST">
+    <h1 class="text-center">Sign Up</h1>
+
+    {{ form.csrf_token }}
+
+    {{ form.first_name.label }}
+    {{ form.first_name(class='form-control', placeholder='Enter First Name') }}
+
+    {{ form.last_name.label }}
+    {{ form.last_name(class='form-control', placeholder='Enter Last Name') }}
+
+    {{ form.phonenum.label }}
+    {{ form.phonenum(class='form-control', placeholder='Enter Phone Number')}}
+
+    {{ form.address.label }}
+    {{ form.address(class='form-control', placeholder='Enter Address')}}
+
+    {{ form.submit(class='btn btn-primary w-100 mt-3') }}
+
+</form>
+{% endblock %}
