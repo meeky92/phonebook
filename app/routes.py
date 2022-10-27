@@ -21,7 +21,7 @@ def signup():
 
         new_user = User(first_name=first_name, last_name =last_name, phone_number=phone_number, address= address)
 
-        flash(f"{new_user} has successfully signed up!", "success")
+        flash(f"{first_name} has successfully signed up!", "success")
 
         # redirect back to home
         return redirect(url_for('index'))
