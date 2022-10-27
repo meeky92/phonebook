@@ -14,7 +14,7 @@ migrate = Migrate(app, db)
 
 app.config['SECRET_KEY'] = 'you-will-never-guess'
 
-from . import routes
+from . import routes, models
 
 # if __name__ == "__main__":
 #   app.run(debug=True)
