@@ -1,6 +1,7 @@
 from flask import render_template, redirect, url_for, flash
 from app import app
 from app.forms import SignUpForm
+from app.models import User
 
 @app.route('/')
 def index():
@@ -14,11 +15,13 @@ def signup():
         print('Your address has been added!')
         first_name = form.first_name.data
         last_name = form.last_name.data
-        phonenum = form.phonenum.data
+        phone_number = form.phone_number.data
         address = form.address.data
-        print(first_name, last_name, phonenum, address)
+        print(first_name, last_name, phone_number, address)
 
-        flash("You have successfully signed up!", "success")
+        new_user = User(first_name=first_name, last_name =last_name, phone_number=phone_number, address= address)
+
+        flash(f"{new_user} has successfully signed up!", "success")
 
         # redirect back to home
         return redirect(url_for('index'))
